@@ -11,6 +11,14 @@
 - **Error Boundaries - Global Error Handling** -
   Error boundaries are React components that catch JavaScript errors within their tree, preventing them from crashing the entire application.
 
+# How do you approach for dark mode and light mode in taiwind?
+
+- There are many options for this but I have opt for using the css variables that is using the `:root` element.
+- At first you need to declare the root inside your `global.css` and put all you colors over there with proper naming.
+- Create another :root with [class~="dark"] which will targets the root element if it has dark class.
+- now you can define those colors in `tailwind.config.js`
+- Resources, https://tailwindcss.com/docs/customizing-colors ,https://stackoverflow.com/questions/72117668/tailwind-colors-based-on-dark-mode
+
 # What is suspense in react?
 
 - Suspense is a React feature that allows components to declaratively express that they are waiting for something to load. It provides a way to gracefully handle `asynchronous operations`, such as `data fetching` or `code splitting`, by `displaying a fallback UI` while the operation is in progress.
