@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./not-found";
+import NotFound from "./not-found";
 
 const inter = Inter({ subsets: ["latin"] });
 const iceland = Iceland({
@@ -22,7 +25,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={iceland.className}>
         <Header />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <ErrorBoundary fallback={<NotFound />}>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </ErrorBoundary>
         <Footer />
       </body>
     </html>
