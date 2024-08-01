@@ -30,6 +30,7 @@ const Header = () => {
           alt="Logo"
         />
         <span className="">Elevate Athletes</span>
+        GIthub connect problem
       </div>
       <ul className="flex items-center gap-x-7">
         {navList &&
