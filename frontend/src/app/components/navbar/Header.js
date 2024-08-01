@@ -7,10 +7,10 @@ import { CiSearch } from "react-icons/ci";
 import { NavButton } from "./NavButton";
 import { NavList } from "./NavList";
 import { useDispatch, useSelector } from "react-redux";
+import { updateActiveNavState } from "@/app/utils/reduxSlices/globalNavState";
 const Header = () => {
-  const navState = useSelector((store) => {
-    console.log(store);
-  });
+  const dispatch = useDispatch();
+
   const navList = [
     "Home",
     "Athletes",
@@ -27,13 +27,22 @@ const Header = () => {
         "
           width={20}
           height={20}
+          alt="Logo"
         />
         <span className="">Elevate Athletes</span>
       </div>
-      <ul className="flex items-center gap-x-6">
+      <ul className="flex items-center gap-x-7">
         {navList &&
           navList.map((e, i) => {
-            return <NavList text={e} key={i} />;
+            return (
+              <NavList
+                text={e}
+                index={i}
+                handleNavList={() => {
+                  dispatch(updateActiveNavState(i));
+                }}
+              />
+            );
           })}
 
         <IconNav icon={<MdOutlineLightMode />} />
