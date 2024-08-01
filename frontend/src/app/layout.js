@@ -8,6 +8,9 @@ import Loading from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./not-found";
 import NotFound from "./not-found";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import AppLayout from "./App";
 
 const inter = Inter({ subsets: ["latin"] });
 const iceland = Iceland({
@@ -24,11 +27,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={iceland.className}>
-        <Header />
-        <ErrorBoundary fallback={<NotFound />}>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-        </ErrorBoundary>
-        <Footer />
+        {/* <Provider store={store}> */}
+
+        {/* <App children={children}/> */}
+
+        <AppLayout children={children} />
+        {/* </Provider> */}
       </body>
     </html>
   );

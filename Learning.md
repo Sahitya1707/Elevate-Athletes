@@ -19,6 +19,10 @@
 - now you can define those colors in `tailwind.config.js`
 - Resources, https://tailwindcss.com/docs/customizing-colors ,https://stackoverflow.com/questions/72117668/tailwind-colors-based-on-dark-mode
 
+# React redux in next js
+
+- In Next.js 13, you cannot directly use React Redux in the root layout because Next.js renders components on the server by default. To use Redux’s <Provider>, which requires a client component, you need to create an additional layout designated as a client component. This layout, such as `AppLayout`, can then include the Redux <Provider> and pass children props to render your components properly.
+
 # What is suspense in react?
 
 - Suspense is a React feature that allows components to declaratively express that they are waiting for something to load. It provides a way to gracefully handle `asynchronous operations`, such as `data fetching` or `code splitting`, by `displaying a fallback UI` while the operation is in progress.

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { MdOutlineLightMode } from "react-icons/md";
@@ -5,7 +6,11 @@ import IconNav from "./IconNav";
 import { CiSearch } from "react-icons/ci";
 import { NavButton } from "./NavButton";
 import { NavList } from "./NavList";
+import { useDispatch, useSelector } from "react-redux";
 const Header = () => {
+  const navState = useSelector((store) => {
+    console.log(store);
+  });
   const navList = [
     "Home",
     "Athletes",
