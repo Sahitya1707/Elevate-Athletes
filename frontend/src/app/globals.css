@@ -4,8 +4,10 @@
 
 @layer base {
   :root {
-    --color-primary: 22 14 153;
+    --color-primary: 22 114 153;
     --color-secondary: 111 114 185;
+    --nav-text-color: 255 255 255;
+
     /* ... */
   }
 

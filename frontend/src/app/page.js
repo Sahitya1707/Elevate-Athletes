@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-[primary]">
+    <main className="">
       <button className=" text-primary">Click me</button>
     </main>
   );
