@@ -4,13 +4,18 @@
 
 @layer base {
   :root {
-    --color-primary: 22 114 153;
-    --color-secondary: 111 114 185;
-    --nav-text-color: 255 255 255;
+    --color-primary: 0 147 255;
+    --color-secondary: 225 224 7;
+    --color-tertiary: 0 255 1;
+    --text-color: 0 0 0;
 
     /* ... */
   }
 
   :root[class~="dark"] {
+    --color-primary: 22 114 153;
+    --color-secondary: 42 237 102;
+
+    --nav-text-color: 255 255 255;
   }
 }

@@ -27,6 +27,10 @@
 
 - To add the font in all your pages you can add that in the layout, rootlayout. You can read more here: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 
+# What is color Mapping in tailwind css?
+
+-Color mapping is a technique used to associate specific color names with their corresponding CSS variable values. This allows you to pass a simple string as a prop to your component and have it automatically use the correct CSS variable for styling. You can see the deifinition of color mapping inside `assets->colorMapping.js` and example in `components->navButton.js`.
+
 # To set up the backend for web site application, I have installed the following dependencies:
 
 - **cors**: A package for enabling Cross-Origin Resource Sharing (CORS) to allow resources to be shared between different origins.

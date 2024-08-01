@@ -12,8 +12,9 @@ module.exports = {
     },
     colors: {
       primary: "rgb(var(--color-primary) / <alpha-value>)",
-      textColor: "rgb(var(--color-background)/<alpha-value> )",
-      navText: "rgb(var(--nav-text-color)/<alpha-value> )",
+      secondary: "rgb(var(--color-secondary)/<alpha-value> )",
+      textColor: "rgb(var(--text-color)/<alpha-value> )",
+      tertiary: "rgb(var(--color-tertiary)/<alpha-value> )",
     },
   },
   plugins: [],
