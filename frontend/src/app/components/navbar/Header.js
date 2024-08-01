@@ -38,6 +38,7 @@ const Header = () => {
               <NavList
                 text={e}
                 index={i}
+                key={i}
                 handleNavList={() => {
                   dispatch(updateActiveNavState(i));
                 }}
