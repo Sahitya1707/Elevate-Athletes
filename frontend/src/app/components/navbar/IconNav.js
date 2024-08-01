@@ -1,7 +1,7 @@
 import React from "react";
 
 const IconNav = ({ icon }) => {
-  return <span>{icon}</span>;
+  return <span className="cursor-pointer">{icon}</span>;
 };
 
 export default IconNav;

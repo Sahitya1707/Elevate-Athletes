@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import { Iceland } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "./components/footer/Footer";
+import Header from "./components/navbar/Header";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";

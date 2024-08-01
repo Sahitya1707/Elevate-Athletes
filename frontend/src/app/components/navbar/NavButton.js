@@ -1,4 +1,4 @@
-import { colorMapping } from "../assets/colorMapping";
+import { colorMapping } from "../../assets/colorMapping";
 
 export const NavButton = ({ text, color }) => {
   const buttonStyle = {
@@ -6,7 +6,10 @@ export const NavButton = ({ text, color }) => {
   };
 
   return (
-    <button className="py-2 px-4 rounded-lg" style={buttonStyle}>
+    <button
+      className="py-2 px-4 rounded-lg uppercase cursor-pointer"
+      style={buttonStyle}
+    >
       {text}
     </button>
   );
