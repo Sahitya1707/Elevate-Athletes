@@ -15,6 +15,7 @@ module.exports = {
       secondary: "rgb(var(--color-secondary)/<alpha-value> )",
       textColor: "rgb(var(--text-color)/<alpha-value> )",
       tertiary: "rgb(var(--color-tertiary)/<alpha-value> )",
+      revTextColor: "rgb(var(--rev-text-color)/<alpha-value> )",
     },
   },
   plugins: [],

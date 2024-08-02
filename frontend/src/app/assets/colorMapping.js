@@ -4,4 +4,5 @@ export const colorMapping = {
   secondary: "var(--color-secondary)",
   tertiary: "var(--color-tertiary)",
   textColor: "var(--text-color)",
+  revTextColor: "var(--rev-text-color)",
 };
