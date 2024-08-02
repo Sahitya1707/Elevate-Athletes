@@ -24,7 +24,7 @@ const login = () => {
             />
           </div>
           <div className="flex justify-center my-4">
-            <NavButton text={"Login"} color={"tertiary"} />{" "}
+            <NavButton text={"Login"} color={"primary"} />{" "}
           </div>
         </div>
       </seciton>{" "}
