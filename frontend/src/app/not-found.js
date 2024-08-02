@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function NotFound({}) {
   return (
     <div>
-      <h2>Something went wrong!</h2>
+      <h2>404 Something went wrong!</h2>
       Try again
     </div>
   );
