@@ -21,3 +21,8 @@
     --nav-rev-text-color: 0 0 0;
   }
 }
+
+/* text shadow */
+.text-shadow {
+  text-shadow: #fc0 1px 0 10px;
+}
