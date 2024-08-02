@@ -11,13 +11,17 @@
 - **Error Boundaries - Global Error Handling** -
   Error boundaries are React components that catch JavaScript errors within their tree, preventing them from crashing the entire application.
 
-# How do you approach for dark mode and light mode in taiwind?
+# How do you approach for dark mode and light mode in tailwind?
 
 - There are many options for this but I have opt for using the css variables that is using the `:root` element.
 - At first you need to declare the root inside your `global.css` and put all you colors over there with proper naming.
 - Create another :root with [class~="dark"] which will targets the root element if it has dark class.
 - now you can define those colors in `tailwind.config.js`
 - Resources, https://tailwindcss.com/docs/customizing-colors ,https://stackoverflow.com/questions/72117668/tailwind-colors-based-on-dark-mode
+
+# For the developer log in into the dashboard
+
+- My approach for the login of the developer into the backend is that there should be super admin and admin and the credntials should already be defined so for this I will try to create a seeder functions where I can store that credentials.
 
 # React redux in next js
 
