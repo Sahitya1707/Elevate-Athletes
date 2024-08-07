@@ -10,10 +10,6 @@ import {
 } from "@/app/utils/reduxSlices/developerLogin";
 
 const login = () => {
-  const formData = new FormData();
-  const handleDeveloperLogin = (e) => {
-    e.preventDefault();
-  };
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
   });
@@ -24,9 +20,20 @@ const login = () => {
     dispatch(updateEmail(e.target.value));
   };
   const handlePassword = (e) => {
+    console.log(e.target.value);
     dispatch(updatePassword(e.target.value));
   };
+  const formData = new FormData();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    formData.append("email", loginData.email);
+    formData.append("password", loginData.password);
+    console.log(...formData.entries());
+    console.log(loginData.email);
+    console.log(loginData.password);
+    const fetchData = await fetch("");
+  };
   return (
     <>
       <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
@@ -63,7 +70,7 @@ const login = () => {
             <NavButton
               text={"Login"}
               color={"primary"}
-              handleButton={handleDeveloperLogin}
+              handleButton={handleSubmit}
             />{" "}
           </div>
         </form>

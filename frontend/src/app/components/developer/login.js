@@ -8,8 +8,8 @@ const Login = ({ text, value, type, autoComplete, handleInput }) => {
         type={type}
         className="border-textColor border-solid border-[0.1px] 
               px-2 py-1 text-xl"
-        // name={type}
-        placeholder="Enter Your Email"
+        name={type}
+        // placeholder="Enter Your Email"
         autoComplete={autoComplete}
         value={value}
         onChange={handleInput}
