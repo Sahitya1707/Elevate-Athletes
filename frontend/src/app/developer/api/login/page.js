@@ -8,6 +8,10 @@ import {
   updateEmail,
   updatePassword,
 } from "@/app/utils/reduxSlices/developerLogin";
+import {
+  backendConnection,
+  developerConnectionString,
+} from "@/app/utils/constant";
 
 const login = () => {
   const loginData = useSelector((store) => {
@@ -32,7 +36,23 @@ const login = () => {
     console.log(...formData.entries());
     console.log(loginData.email);
     console.log(loginData.password);
-    const fetchData = await fetch("");
+    const fetchData = await fetch(
+      `${backendConnection}${developerConnectionString}login`,
+      {
+        method: "POST",
+        body: formData,
+        // headers: {
+        //   "Content-type": "application/json; charset=UTF-8",
+        // },
+      }
+    )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log(fetchData);
   };
   return (
     <>
