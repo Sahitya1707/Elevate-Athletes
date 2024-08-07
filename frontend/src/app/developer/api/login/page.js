@@ -4,16 +4,29 @@ import { NavButton } from "@/app/components/navbar/NavButton";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
 import Login from "@/app/components/developer/login";
+import {
+  updateEmail,
+  updatePassword,
+} from "@/app/utils/reduxSlices/developerLogin";
 
 const login = () => {
+  const formData = new FormData();
   const handleDeveloperLogin = (e) => {
     e.preventDefault();
   };
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
   });
-  console.log(loginData);
-  const formData = new FormData();
+  const dispatch = useDispatch();
+
+  const handleMail = (e) => {
+    console.log(e.target.value);
+    dispatch(updateEmail(e.target.value));
+  };
+  const handlePassword = (e) => {
+    dispatch(updatePassword(e.target.value));
+  };
+
   return (
     <>
       <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
@@ -35,6 +48,7 @@ const login = () => {
             type={"email "}
             autoComplete="off"
             value={loginData.email}
+            handleInput={handleMail}
           />
 
           <Login
@@ -42,6 +56,7 @@ const login = () => {
             type="password"
             autoComplete={"off"}
             value={loginData.password}
+            handleInput={handlePassword}
           />
 
           <div className="flex justify-center my-4">
