@@ -1,12 +1,19 @@
 "use client";
 import { colorMapping } from "@/app/assets/colorMapping";
 import { NavButton } from "@/app/components/navbar/NavButton";
+import { useSelector, useDispatch } from "react-redux";
 import React from "react";
+import Login from "@/app/components/developer/login";
 
 const login = () => {
   const handleDeveloperLogin = (e) => {
     e.preventDefault();
   };
+  const loginData = useSelector((store) => {
+    return store.developerLoginCredential;
+  });
+  console.log(loginData);
+  const formData = new FormData();
   return (
     <>
       <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
@@ -22,26 +29,21 @@ const login = () => {
           >
             Welcome to developer login
           </h2>
-          <div className="flex flex-col my-2">
-            <span>Email</span>
-            <input
-              type="email"
-              className="border-textColor border-solid border-[0.1px] 
-              px-2 py-1 text-xl"
-              name="email"
-              autoComplete="off"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span>Password</span>
-            <input
-              type="password"
-              className="border-textColor border-solid border-[0.1px] px-2 py-1 text-2xl"
-              autoComplete="off"
-              name="password"
-              minLength={8}
-            />
-          </div>
+
+          <Login
+            text={"email"}
+            type={"email "}
+            autoComplete="off"
+            value={loginData.email}
+          />
+
+          <Login
+            text="password"
+            type="password"
+            autoComplete={"off"}
+            value={loginData.password}
+          />
+
           <div className="flex justify-center my-4">
             <NavButton
               text={"Login"}
