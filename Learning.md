@@ -42,7 +42,14 @@
 
 # What is color Mapping in tailwind css?
 
--Color mapping is a technique used to associate specific color names with their corresponding CSS variable values. This allows you to pass a simple string as a prop to your component and have it automatically use the correct CSS variable for styling. You can see the deifinition of color mapping inside `assets->colorMapping.js` and example in `components->navButton.js`.
+- Color mapping is a technique used to associate specific color names with their corresponding CSS variable values. This allows you to pass a simple string as a prop to your component and have it automatically use the correct CSS variable for styling. You can see the deifinition of color mapping inside `assets->colorMapping.js` and example in `components->navButton.js`.
+
+# What is get, post, put, delete in express?
+
+- `GET` : Retrieves data from the server. Typically used for fetching resources without modifying them.
+- `POST` : Creates new data on the server. Commonly used for submitting forms, uploading files, or creating new records.
+- `PUT` : Updates existing data on the server.
+- `DELETE` : Deletes existing data from the server.
 
 # To set up the backend for web site application, I have installed the following dependencies:
 

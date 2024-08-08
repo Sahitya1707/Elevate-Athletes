@@ -13,6 +13,7 @@ app.use(cors());
 app.listen(port, () => {
   console.log(`App running in ${port}`);
 });
+
 app.use(express.json()); // Add this line before app.use("/developer/api/", developerRoute);
 
 app.use("/developer/api", developerRoute);
