@@ -31,6 +31,11 @@
 
 - Suspense is a React feature that allows components to declaratively express that they are waiting for something to load. It provides a way to gracefully handle `asynchronous operations`, such as `data fetching` or `code splitting`, by `displaying a fallback UI` while the operation is in progress.
 
+# Fast Reloading in next js
+
+- Next js perform a fast reload whenever you edit a file that only `exports React Components`, or if we edit the file that aren't React components, or if we import a files that are outside ot the `React tree`.
+  Read More - https://nextjs.org/docs/architecture/fast-refresh
+
 # How do you use the google font in next js?
 
 - To add the font in all your pages you can add that in the layout, rootlayout. You can read more here: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts

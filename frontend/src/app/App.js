@@ -15,7 +15,6 @@ const AppLayout = ({ children }) => {
 
   // You can access the current path using router.pathname
   // and the full URL using window.location.href (if needed)
-  console.log(router.includes("/developer"));
 
   return (
     <>

@@ -3,7 +3,7 @@ import { colorMapping } from "@/app/assets/colorMapping";
 import { NavButton } from "@/app/components/navbar/NavButton";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
-import Login from "@/app/components/developer/login";
+
 import {
   updateEmail,
   updatePassword,
@@ -12,6 +12,7 @@ import {
   backendConnection,
   developerConnectionString,
 } from "@/app/utils/constant";
+import Login from "@/app/components/developer/login";
 
 const login = () => {
   const loginData = useSelector((store) => {
@@ -52,7 +53,6 @@ const login = () => {
       .catch((err) => {
         console.log(err);
       });
-    console.log(fetchData);
   };
   return (
     <>
