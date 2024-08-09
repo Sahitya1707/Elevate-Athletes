@@ -24,7 +24,6 @@ const developerAuthentication = (req, res, next) => {
             console.log("Error comparing password", err);
           }
           if (result) {
-            console.log("Password autheticated");
             const token = generateDeveloperLoginToken(loginData.toJSON());
             res.json({
               success: true,

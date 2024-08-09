@@ -1,19 +1,22 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import cookie from "cookie";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateEmail,
   updatePassword,
 } from "@/app/utils/reduxSlices/developerLogin";
+import Cookies from "js-cookie";
 import {
   backendConnection,
   developerConnectionString,
 } from "@/app/utils/constant";
-import Login from "@/app/components/developer/login";
+import Login from "@/app/components/developer/Login";
 import { NavButton } from "@/app/components/navbar/NavButton";
 import { colorMapping } from "@/app/assets/colorMapping";
 
 const Page = () => {
+  const [token, setToken] = useState("");
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
   });
@@ -44,9 +47,17 @@ const Page = () => {
     })
       .then((res) => {
         console.log(res);
+
         return res.json();
       })
       .then((data) => {
+        setToken(data.token);
+        Cookies.set("token", data.token, {
+          expires: 1,
+          secure: true,
+          sameSite: "Strict",
+        });
+
         console.log(data);
       })
       .then((err) => {
