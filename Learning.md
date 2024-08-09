@@ -55,6 +55,16 @@
 
 - **Defination** - JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. (Read More: https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e)
 
+# What is JWT made up of?
+
+- A JWT consists of three parts:
+
+  **Header:** Metadata about the token.
+  **Payload:** Data to be encoded (not for sensitive information).
+  **Signature:** Created from header, payload, and a secret server key.
+
+      - The header and payload are plain text, but the signature verifies their authenticity. Sensitive data should never be stored in a JWT.
+
 # To set up the backend for web site application, I have installed the following dependencies:
 
 - **cors**: A package for enabling Cross-Origin Resource Sharing (CORS) to allow resources to be shared between different origins.
@@ -63,3 +73,8 @@
 - **mongodb**: The official MongoDB driver for Node.js, used for interacting with MongoDB databases.
 - **mongoose**: An ODM (Object Data Modeling) library for MongoDB and Node.js, providing a higher-level abstraction for interacting with MongoDB.
 - **multer**: A middleware for handling `multipart/form-data`, which is used for file uploads.
+
+# What is bcrypt js?
+
+- Bcrypt uses a complex `hashing function` that generates a seemingly random string of characters from a plaintext password. This makes it virtually impossible to reverse the hash and recover the original password. Bcrypt adds another layer of security by incorporating a random string called a `salt` before hashing the password.
+- **Comparing password in bcrypt** - Read it here https://www.freecodecamp.org/news/how-to-hash-passwords-with-bcrypt-in-nodejs/#:~:text=hashed%20password%20asynchronously.-,bcrypt.,indicating%20whether%20the%20passwords%20match.

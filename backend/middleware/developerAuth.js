@@ -1,6 +1,9 @@
 const jwt = require("jsonwebtoken");
 const DeveloperAuthModal = require(".././models/developer/login");
 const bcrypt = require("bcrypt");
+const {
+  generateDeveloperLoginToken,
+} = require("../controllers/developerLoginJWT");
 
 const developerAuthentication = (req, res, next) => {
   //   const authHeader = req.headers("authorization");
@@ -11,6 +14,7 @@ const developerAuthentication = (req, res, next) => {
   // finding the email from the database
   DeveloperAuthModal.findOne({ email })
     .then((loginData) => {
+      //   console.log(loginData);
       // if loginData is present in the database
       if (loginData) {
         const hashedPassword = loginData.password;
@@ -21,6 +25,7 @@ const developerAuthentication = (req, res, next) => {
           }
           if (result) {
             console.log("Password autheticated");
+            generateDeveloperLoginToken(loginData.toJSON());
           } else {
             console.log("Authetication failed does not match");
           }
