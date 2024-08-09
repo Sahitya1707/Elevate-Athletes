@@ -43,6 +43,7 @@ const Page = () => {
       body: JSON.stringify(formData),
     })
       .then((res) => {
+        console.log(res);
         return res.json();
       })
       .then((data) => {

@@ -25,7 +25,12 @@ const developerAuthentication = (req, res, next) => {
           }
           if (result) {
             console.log("Password autheticated");
-            generateDeveloperLoginToken(loginData.toJSON());
+            const token = generateDeveloperLoginToken(loginData.toJSON());
+            res.json({
+              success: true,
+              message: "Authentication Successful",
+              token,
+            });
           } else {
             console.log("Authetication failed does not match");
           }
@@ -38,7 +43,7 @@ const developerAuthentication = (req, res, next) => {
     .catch((err) => {
       console.log(err);
     });
-  next();
+  //   next();
 };
 
 module.exports = developerAuthentication;
