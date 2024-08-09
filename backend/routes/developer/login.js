@@ -5,8 +5,8 @@ const developerAuthentication = require("../../middleware/developerAuth");
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 router.post("/login", developerAuthentication, async (req, res) => {
-  console.log("/login");
-  console.log(req.body);
+  // console.log("/login");
+  // console.log(req.body);
 });
 
 module.exports = router;

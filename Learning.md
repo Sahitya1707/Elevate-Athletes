@@ -51,6 +51,10 @@
 - `PUT` : Updates existing data on the server.
 - `DELETE` : Deletes existing data from the server.
 
+# Using Json Web token for the authorization?
+
+- **Defination** - JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. (Read More: https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e)
+
 # To set up the backend for web site application, I have installed the following dependencies:
 
 - **cors**: A package for enabling Cross-Origin Resource Sharing (CORS) to allow resources to be shared between different origins.
