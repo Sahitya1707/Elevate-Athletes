@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import cookie from "cookie";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -14,9 +15,12 @@ import {
 import Login from "@/app/components/developer/Login";
 import { NavButton } from "@/app/components/navbar/NavButton";
 import { colorMapping } from "@/app/assets/colorMapping";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 const Page = () => {
+  const router = useRouter();
   const [token, setToken] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
   });
@@ -57,7 +61,7 @@ const Page = () => {
         //   secure: true,
         //   sameSite: "Strict",
         // });
-
+        router.push("/developer/api/dashboard");
         console.log(data);
         console.log(document.cookie);
       })
@@ -65,6 +69,9 @@ const Page = () => {
         console.log(err);
       });
   };
+  useEffect(() => {
+    setShowPassword(false);
+  }, []);
   return (
     <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
       <form
@@ -88,13 +95,23 @@ const Page = () => {
           value={loginData.email}
           handleInput={handleMail}
         />
-        <Login
-          text="password"
-          type="password"
-          autoComplete={"off"}
-          value={loginData.password}
-          handleInput={handlePassword}
-        />
+        <div className="relative">
+          <Login
+            text="password"
+            type={`${showPassword ? "text" : "password"}`}
+            autoComplete={"off"}
+            value={loginData.password}
+            handleInput={handlePassword}
+          />
+          <span
+            className="absolute top-[50%] right-4 cursor-pointer p-1 hover:bg-[lightgrey] rounded-full "
+            onClick={() => {
+              setShowPassword(!showPassword);
+            }}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
         <div className="flex justify-center my-4">
           <NavButton
             text={"Login"}
