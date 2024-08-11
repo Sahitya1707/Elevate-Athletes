@@ -5,7 +5,8 @@ const cors = require("cors");
 const path = require("path");
 const connectDB = require("./config/db");
 const developerRoute = require("./routes/developer/login");
-
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 connectDB();
 const port = process.env.PORT || 5001;
 // const connectDB

@@ -25,10 +25,16 @@ const developerAuthentication = (req, res, next) => {
           }
           if (result) {
             const token = generateDeveloperLoginToken(loginData.toJSON());
+            res.cookie("token", token, {
+              httpOnly: true, // Helps prevent XSS attacks
+              secure: false, // Set to true in production if using HTTPS
+              sameSite: "Strict", // Helps prevent CSRF attacks
+              expires: new Date(Date.now() + 3600000), // Cookie expires in 1 hour
+            });
+
             res.json({
               success: true,
               message: "Authentication Successful",
-              token,
             });
           } else {
             console.log("Authetication failed does not match");

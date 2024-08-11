@@ -85,3 +85,7 @@
   **Payload** - It is the data that has to be encoded in the JWT.
   **secretKey** - It is a key used to sign the JWT and it is fetched from the .env.
   **options** - It contains the various other parameters like `expiresIn`, `audience`, `issuer`, and `alogrithms`
+
+  # What is HTTP-Only Cookies?
+
+  - HTTP-only cookies are a security feature that prevents client-side scripts (JavaScript) from accessing and manipulating cookie data. This helps protect against Cross-Site Scripting (XSS) attacks, where malicious code can steal sensitive information stored in cookies.

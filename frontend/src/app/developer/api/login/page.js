@@ -47,18 +47,19 @@ const Page = () => {
     })
       .then((res) => {
         console.log(res);
-
+        console.log(res.headers);
         return res.json();
       })
       .then((data) => {
-        setToken(data.token);
-        Cookies.set("token", data.token, {
-          expires: 1,
-          secure: true,
-          sameSite: "Strict",
-        });
+        // setToken(data.token);
+        // Cookies.set("token", data.token, {
+        //   expires: 1,
+        //   secure: true,
+        //   sameSite: "Strict",
+        // });
 
         console.log(data);
+        console.log(document.cookie);
       })
       .then((err) => {
         console.log(err);
