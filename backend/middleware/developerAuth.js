@@ -25,7 +25,8 @@ const developerAuthentication = (req, res, next) => {
           }
           if (result) {
             const token = generateDeveloperLoginToken(loginData.toJSON());
-            res.cookie("token", token, {
+            console.log(token);
+            res.cookie("token", token.accessToken, {
               httpOnly: true, // Helps prevent XSS attacks
               secure: false, // Set to true in production if using HTTPS
               sameSite: "Strict", // Helps prevent CSRF attacks
@@ -34,6 +35,7 @@ const developerAuthentication = (req, res, next) => {
 
             res.json({
               success: true,
+              token: token.refreshToken,
               message: "Authentication Successful",
             });
           } else {

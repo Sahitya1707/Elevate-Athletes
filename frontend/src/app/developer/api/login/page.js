@@ -61,7 +61,7 @@ const Page = () => {
         //   secure: true,
         //   sameSite: "Strict",
         // });
-        router.push("/developer/api/dashboard");
+        // router.push("/developer/api/dashboard");
         console.log(data);
         console.log(document.cookie);
       })
