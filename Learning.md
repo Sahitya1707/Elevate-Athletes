@@ -89,3 +89,19 @@
   # What is HTTP-Only Cookies?
 
   - HTTP-only cookies are a security feature that prevents client-side scripts (JavaScript) from accessing and manipulating cookie data. This helps protect against Cross-Site Scripting (XSS) attacks, where malicious code can steal sensitive information stored in cookies.
+
+# Token Management and Cookie Settings
+
+## Fetch API and Credentials
+
+When making requests to the server, ensure that `credentials` is included in the fetch options to enable cookie handling. This ensures that cookies, including the access and refresh tokens, are sent along with the request:
+
+```javascript
+fetch("http://your-api-endpoint", {
+  method: "GET", // or 'POST', etc.
+  credentials: "include", // Important: includes cookies with the request
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
+```

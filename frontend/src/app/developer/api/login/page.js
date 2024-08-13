@@ -44,6 +44,8 @@ const Page = () => {
 
     await fetch(`${backendConnection}${developerConnectionString}login`, {
       method: "POST",
+      // you have to include this inorder to set the cookies inside your browser
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
