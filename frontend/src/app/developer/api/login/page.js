@@ -19,7 +19,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 const Page = () => {
   const router = useRouter();
-  const [token, setToken] = useState("");
+  const [accessToken, setAccessToken] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
@@ -63,15 +63,16 @@ const Page = () => {
         // });
         // router.push("/developer/api/dashboard");
         console.log(data);
-        console.log(document.cookie);
+        setAccessToken(data.accessToken);
+        console.log(document);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
+        setAccessToken(null);
       });
   };
-  useEffect(() => {
-    setShowPassword(false);
-  }, []);
+
+  console.log(accessToken);
   return (
     <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
       <form

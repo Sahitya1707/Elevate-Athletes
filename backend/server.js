@@ -6,11 +6,17 @@ const path = require("path");
 const connectDB = require("./config/db");
 const developerRoute = require("./routes/developer/login");
 const cookieParser = require("cookie-parser");
-app.use(cookieParser());
+
 connectDB();
 const port = process.env.PORT || 5001;
 // const connectDB
-app.use(cors());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Your client-side origin
+    credentials: true,
+  })
+);
 app.listen(port, () => {
   console.log(`App running in ${port}`);
 });

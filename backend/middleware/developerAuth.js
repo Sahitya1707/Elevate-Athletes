@@ -2,7 +2,8 @@ const jwt = require("jsonwebtoken");
 const DeveloperAuthModal = require(".././models/developer/login");
 const bcrypt = require("bcrypt");
 const {
-  generateDeveloperLoginToken,
+  generateRefreshToken,
+  generateAccessToken,
 } = require("../controllers/developerLoginJWT");
 
 const developerAuthentication = (req, res, next) => {
@@ -24,18 +25,26 @@ const developerAuthentication = (req, res, next) => {
             console.log("Error comparing password", err);
           }
           if (result) {
-            const token = generateDeveloperLoginToken(loginData.toJSON());
-            console.log(token);
-            res.cookie("token", token.accessToken, {
+            const refreshToken = generateRefreshToken(loginData.toJSON());
+
+            res.cookie("refreshToken", refreshToken, {
               httpOnly: true, // Helps prevent XSS attacks
               secure: false, // Set to true in production if using HTTPS
-              sameSite: "Strict", // Helps prevent CSRF attacks
+              sameSite: "", // Helps prevent CSRF attacks
               expires: new Date(Date.now() + 3600000), // Cookie expires in 1 hour
+            });
+            const accessToken = generateAccessToken();
+            res.cookie("accessToken", accessToken, {
+              secure: false,
+
+              httpOnly: false,
+              sameSite: "None", // Helps prevent CSRF attacks
+              expires: new Date(Date.now() + 3600000), //
             });
 
             res.json({
               success: true,
-              token: token.refreshToken,
+              accessToken: accessToken,
               message: "Authentication Successful",
             });
           } else {
