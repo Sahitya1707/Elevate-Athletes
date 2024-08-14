@@ -21,6 +21,8 @@ const Page = () => {
   const router = useRouter();
   const [accessToken, setAccessToken] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const token = Cookies.get("accessToken");
+
   const loginData = useSelector((store) => {
     return store.developerLoginCredential;
   });
@@ -63,10 +65,10 @@ const Page = () => {
         //   secure: true,
         //   sameSite: "Strict",
         // });
-        // router.push("/developer/api/dashboard");
         console.log(data);
         setAccessToken(data.accessToken);
-        console.log(document);
+        console.log(document.cookie);
+        router.push("/developer/api/dashboard");
       })
       .catch((err) => {
         console.log(err);

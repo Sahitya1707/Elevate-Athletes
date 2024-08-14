@@ -5,7 +5,7 @@ const generateRefreshToken = (payload) => {
   try {
     const secretKey = process.env.SECRET_JWT_KEY_D;
     const options = {
-      expiresIn: "3d",
+      expiresIn: "2d",
       audience: "developer",
       issuer: "elevate-athletes-developer",
       algorithm: "HS256",
@@ -21,10 +21,10 @@ const generateRefreshToken = (payload) => {
     throw new Error("Error creating token"); // Throw error to be handled by caller
   }
 };
-const generateAccessToken = () => {
+const generateAccessToken = (refreshToken) => {
   const accessToken = jwt.sign(
     {
-      username: `D5UJ0EC3NL`,
+      refreshToken,
     },
     process.env.ACCESS_JWT_KEY,
     {

@@ -31,15 +31,17 @@ const developerAuthentication = (req, res, next) => {
               httpOnly: true, // Helps prevent XSS attacks
               secure: false, // Set to true in production if using HTTPS
               sameSite: "", // Helps prevent CSRF attacks
-              expires: new Date(Date.now() + 3600000), // Cookie expires in 1 hour
+              // making it valid for 2 days
+              expires: new Date(Date.now() + 60 * 60 * 24 * 100 * 2),
             });
-            const accessToken = generateAccessToken();
+            const accessToken = generateAccessToken(refreshToken);
             res.cookie("accessToken", accessToken, {
               secure: false,
 
               httpOnly: false,
-              sameSite: "None", // Helps prevent CSRF attacks
-              expires: new Date(Date.now() + 3600000), //
+              sameSite: "", // Helps prevent CSRF attacks
+              // making it valid for 15 min
+              expires: new Date(Date.now() + 15 * 60 * 100), //
             });
 
             res.json({
