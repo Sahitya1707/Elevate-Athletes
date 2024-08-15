@@ -1,10 +1,14 @@
+/**
+ * This file is for generating the token and handling it to the client side not for the authencation naming is quite different.
+ */
+
 const jwt = require("jsonwebtoken");
-const DeveloperAuthModal = require(".././models/developer/login");
+const DeveloperAuthModal = require("../../models/developer/login");
 const bcrypt = require("bcrypt");
 const {
   generateRefreshToken,
   generateAccessToken,
-} = require("../controllers/developerLoginJWT");
+} = require("../../controllers/developerLoginJWT");
 
 const developerAuthentication = (req, res, next) => {
   //   const authHeader = req.headers("authorization");
@@ -32,7 +36,7 @@ const developerAuthentication = (req, res, next) => {
               secure: false, // Set to true in production if using HTTPS
               sameSite: "", // Helps prevent CSRF attacks
               // making it valid for 2 days
-              expires: new Date(Date.now() + 60 * 60 * 24 * 100 * 2),
+              expires: new Date(Date.now() + 60 * 60 * 24 * 2 * 1000),
             });
             const accessToken = generateAccessToken(refreshToken);
             res.cookie("accessToken", accessToken, {

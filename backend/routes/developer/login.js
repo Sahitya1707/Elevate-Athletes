@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const DeveloperLoginModal = require("../../models/developer/login");
-const developerAuthentication = require("../../middleware/developerAuth");
-const { checkLogIn } = require("../../middleware/checkLogin");
+
+const developerAuthentication = require("../../middleware/developer/developerAuth");
+const { verifyLogin } = require("../../middleware/developer/verifyLogin");
+const { refreshToken } = require("../../middleware/developer/refreshToken");
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 router.post("/login", developerAuthentication);
-router.post("/developerAuth", checkLogIn);
+router.get("/verify", verifyLogin);
+router.post("/refresh", refreshToken);
 
 module.exports = router;

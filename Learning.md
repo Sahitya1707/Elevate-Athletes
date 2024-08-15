@@ -105,3 +105,18 @@ fetch("http://your-api-endpoint", {
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
 ```
+
+# Higher order component
+
+- A higher-order component (HOC) is a pattern in React for reusing component logic. It is a function that takes a component and returns a new component with additional props or behavior.
+
+## Example
+
+```javascript
+const withEnhancement = (WrappedComponent) => {
+  return (props) => {
+    // Add some functionality or props
+    return <WrappedComponent {...props} />;
+  };
+};
+```

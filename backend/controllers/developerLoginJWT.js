@@ -14,7 +14,6 @@ const generateRefreshToken = (payload) => {
 
     // Creating a refresh token
 
-    console.log("This is refresh token");
     return refreshToken;
   } catch {
     console.error("Error creating token:");
