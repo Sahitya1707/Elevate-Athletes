@@ -12,6 +12,7 @@ const {
 
 const developerAuthentication = (req, res, next) => {
   //   const authHeader = req.headers("authorization");
+  console.log(req.body);
 
   const { email, password } = req.body;
 
@@ -19,7 +20,7 @@ const developerAuthentication = (req, res, next) => {
   // finding the email from the database
   DeveloperAuthModal.findOne({ email })
     .then((loginData) => {
-      //   console.log(loginData);
+      console.log(loginData);
       // if loginData is present in the database
       if (loginData) {
         const hashedPassword = loginData.password;
@@ -50,7 +51,7 @@ const developerAuthentication = (req, res, next) => {
 
             res.json({
               success: true,
-              accessToken: accessToken,
+              // accessToken: accessToken,
               message: "Authentication Successful",
             });
           } else {
@@ -58,8 +59,7 @@ const developerAuthentication = (req, res, next) => {
           }
         });
       } else {
-        console.log("invalid credentials");
-        return res.status(401).json({ message: "Invalid Credentials" });
+        res.status(401).send({ message: "Invalid Credentials" });
       }
     })
     .catch((err) => {

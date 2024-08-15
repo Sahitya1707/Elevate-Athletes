@@ -43,40 +43,36 @@ const Page = () => {
       email: loginData.email,
       password: loginData.password,
     };
+    try {
+      const loginResponse = await fetch(
+        `${backendConnection}${developerConnectionString}login`,
+        {
+          method: "POST",
+          // you have to include this inorder to set the cookies inside your browser
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    await fetch(`${backendConnection}${developerConnectionString}login`, {
-      method: "POST",
-      // you have to include this inorder to set the cookies inside your browser
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => {
-        console.log(res);
-        console.log(res.headers);
-        return res.json();
-      })
-      .then((data) => {
-        // setToken(data.token);
-        // Cookies.set("token", data.token, {
-        //   expires: 1,
-        //   secure: true,
-        //   sameSite: "Strict",
-        // });
-        console.log(data);
-        setAccessToken(data.accessToken);
-        console.log(document.cookie);
+      if (loginResponse.ok) {
         router.push("/developer/api/dashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-        setAccessToken(null);
-      });
+      } else {
+        console.log(loginResponse.status);
+        if (loginResponse.status === 401) console.log("Invalid Error");
+
+        console.log("Something is wrong");
+      }
+      const data = await loginResponse.json();
+    } catch (err) {
+      console.error("error: ", err);
+    } finally {
+      console.log("fetch Completed");
+    }
   };
 
-  console.log(accessToken);
   return (
     <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">
       <form
