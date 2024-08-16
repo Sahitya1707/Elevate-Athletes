@@ -8,6 +8,7 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import NotFound from "./not-found";
 import store from "./utils/store";
 import { usePathname } from "next/navigation";
+import Popup from "./components/Popup";
 
 const AppLayout = ({ children }) => {
   const router = usePathname();
@@ -20,6 +21,7 @@ const AppLayout = ({ children }) => {
     <>
       {" "}
       <Provider store={store}>
+        <Popup />
         {router && router.includes("/developer/") ? (
           <>{children}</>
         ) : (

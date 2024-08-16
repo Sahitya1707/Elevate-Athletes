@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = ({ text, value, type, autoComplete, handleInput }) => {
+const LoginInput = ({ text, value, type, autoComplete, handleInput }) => {
   return (
     <div className="flex flex-col my-2">
       <span className="capitalize">{text}</span>
@@ -18,4 +18,4 @@ const Login = ({ text, value, type, autoComplete, handleInput }) => {
   );
 };
 
-export default Login;
+export default LoginInput;

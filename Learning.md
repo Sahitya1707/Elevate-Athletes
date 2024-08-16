@@ -92,6 +92,30 @@
 
 # Token Management and Cookie Settings
 
+1. **Access Token**:
+
+   - Valid for 15 minutes.
+   - Sent as an `HttpOnly` cookie.
+   - Verified on the server when accessing protected routes.
+
+2. **Refresh Token**:
+
+   - Used when the access token is missing or expired.
+   - If valid, a new access token is issued.
+
+3. **Server Response**:
+   - `OK` status if the access token is valid or successfully refreshed.
+   - Authentication error if both tokens are invalid.
+
+## Client-Side Handling
+
+- **HOC**: A Higher-Order Component will handle authentication checks by fetching the server's response and either allowing access or redirecting to the login page.
+
+## Security
+
+- **HttpOnly Cookies**: Prevent client-side access to tokens, mitigating XSS risks.
+- **Token Expiry**: Access tokens expire every 15 minutes for added security.
+
 ## Fetch API and Credentials
 
 When making requests to the server, ensure that `credentials` is included in the fetch options to enable cookie handling. This ensures that cookies, including the access and refresh tokens, are sent along with the request:

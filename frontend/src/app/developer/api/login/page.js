@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { RxCross2 } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 import cookie from "cookie";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,10 +13,18 @@ import {
   backendConnection,
   developerConnectionString,
 } from "@/app/utils/constant";
-import Login from "@/app/components/developer/Login";
+import LoginInput from "@/app/components/developer/LoginInput";
 import { NavButton } from "@/app/components/navbar/NavButton";
 import { colorMapping } from "@/app/assets/colorMapping";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import {
+  updateIconColor,
+  updatePopupIcon,
+  updatePopupVisibility,
+  updateText,
+  updateVisibility,
+  updateWarningSign,
+} from "@/app/utils/reduxSlices/popupSlice";
 
 const Page = () => {
   const router = useRouter();
@@ -62,8 +71,10 @@ const Page = () => {
       } else {
         console.log(loginResponse.status);
         if (loginResponse.status === 401) console.log("Invalid Error");
-
-        console.log("Something is wrong");
+        dispatch(updatePopupVisibility(true));
+        dispatch(updateWarningSign(true));
+        dispatch(updateIconColor("red"));
+        dispatch(updateText("Cannot logged you in"));
       }
       const data = await loginResponse.json();
     } catch (err) {
@@ -89,7 +100,7 @@ const Page = () => {
         >
           Welcome to developer login
         </h2>
-        <Login
+        <LoginInput
           text={"email"}
           type={"email "}
           autoComplete="off"
@@ -97,7 +108,7 @@ const Page = () => {
           handleInput={handleMail}
         />
         <div className="relative">
-          <Login
+          <LoginInput
             text="password"
             type={`${showPassword ? "text" : "password"}`}
             autoComplete={"off"}
