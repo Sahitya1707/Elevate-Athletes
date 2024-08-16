@@ -1,10 +1,7 @@
 "use client";
 import DeveloperRoute from "@/app/components/hoc/DeveloperRoute";
-import {
-  backendConnection,
-  developerConnectionString,
-} from "@/app/utils/constant";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 
 const page = () => {
   return <div>dasboard</div>;

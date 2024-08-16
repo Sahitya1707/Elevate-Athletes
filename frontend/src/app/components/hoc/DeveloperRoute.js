@@ -23,15 +23,22 @@ const DeveloperRoute = (ProtectedRoutes) => {
           );
           if (authResponse.ok) {
             console.log("test is done");
+            const data = await authResponse.json();
+            console.log(data);
           }
         } catch (err) {
+          console.log("err has been called");
           console.log(err);
-        } finally {
+          router("developer/api/login");
         }
       };
       checkDeveloperAuth();
     }, [router]);
-    return <ProtectedRoutes {...props} />;
+    return (
+      <>
+        <ProtectedRoutes {...props} />
+      </>
+    );
   };
 };
 

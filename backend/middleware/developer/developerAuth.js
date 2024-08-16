@@ -12,7 +12,6 @@ const {
 
 const developerAuthentication = (req, res, next) => {
   //   const authHeader = req.headers("authorization");
-  console.log(req.body);
 
   const { email, password } = req.body;
 
@@ -20,7 +19,6 @@ const developerAuthentication = (req, res, next) => {
   // finding the email from the database
   DeveloperAuthModal.findOne({ email })
     .then((loginData) => {
-      console.log(loginData);
       // if loginData is present in the database
       if (loginData) {
         const hashedPassword = loginData.password;
@@ -39,14 +37,14 @@ const developerAuthentication = (req, res, next) => {
               // making it valid for 2 days
               expires: new Date(Date.now() + 60 * 60 * 24 * 2 * 1000),
             });
-            const accessToken = generateAccessToken(refreshToken);
+            const accessToken = generateAccessToken(loginData.toJSON().email);
             res.cookie("accessToken", accessToken, {
               secure: false,
 
-              httpOnly: false,
+              httpOnly: true,
               sameSite: "", // Helps prevent CSRF attacks
               // making it valid for 15 min
-              expires: new Date(Date.now() + 15 * 60 * 100), //
+              expires: new Date(Date.now() + 15 * 60 * 1000), //
             });
 
             res.json({

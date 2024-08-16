@@ -1,16 +1,15 @@
 const jwt = require("jsonwebtoken");
 
 const generateRefreshToken = (payload) => {
-  console.log(payload);
   try {
-    const secretKey = process.env.SECRET_JWT_KEY_D;
+    const refreshKey = process.env.REFRESH_JWT_KEY_D;
     const options = {
       expiresIn: "2d",
       audience: "developer",
       issuer: "elevate-athletes-developer",
       algorithm: "HS256",
     };
-    const refreshToken = jwt.sign(payload, secretKey, options);
+    const refreshToken = jwt.sign(payload, refreshKey, options);
 
     // Creating a refresh token
 
@@ -20,12 +19,13 @@ const generateRefreshToken = (payload) => {
     throw new Error("Error creating token"); // Throw error to be handled by caller
   }
 };
-const generateAccessToken = (refreshToken) => {
+const generateAccessToken = (data) => {
   const accessToken = jwt.sign(
     {
-      refreshToken,
+      email: data,
+      otherValue: "12FX21",
     },
-    process.env.ACCESS_JWT_KEY,
+    process.env.ACCESS_JWT_KEY_D,
     {
       expiresIn: "15m",
     }
