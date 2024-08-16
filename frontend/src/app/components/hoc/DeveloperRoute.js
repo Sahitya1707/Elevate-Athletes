@@ -25,11 +25,14 @@ const DeveloperRoute = (ProtectedRoutes) => {
             console.log("test is done");
             const data = await authResponse.json();
             console.log(data);
+            // need to set the email inside the global function so
+            setIsAuthenticated(true);
+          } else {
+            router.push("/developer/api/login");
           }
         } catch (err) {
           console.log("err has been called");
           console.log(err);
-          router("developer/api/login");
         }
       };
       checkDeveloperAuth();

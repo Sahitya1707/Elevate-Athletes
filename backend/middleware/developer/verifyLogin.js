@@ -54,7 +54,7 @@ const verifyLogin = (req, res) => {
       });
       // Generating access token
     } catch (err) {
-      console.log(err);
+      return res.status(400).send("Invalid Token.");
     }
   }
 };
