@@ -13,9 +13,6 @@ export const popupSlice = createSlice({
       state.visibility = action.payload;
     },
 
-    updatePopupIcon: (state, action) => {
-      state.icon = action.payload;
-    },
     updateText: (state, action) => {
       state.text = action.payload;
     },
@@ -29,7 +26,7 @@ export const popupSlice = createSlice({
 });
 export const {
   updatePopupVisibility,
-  updatePopupIcon,
+
   updateIconColor,
   updateText,
   updateWarningSign,
