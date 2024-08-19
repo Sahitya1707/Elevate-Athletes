@@ -6,6 +6,8 @@
   :root {
     --color-primary: 0 147 255;
     --color-secondary: 225 224 7;
+    --color-secondaryTest: 225 224 7;
+
     --color-tertiary: 0 255 1;
     --text-color: 0 0 0;
     --rev-text-color: 255 255 255;
