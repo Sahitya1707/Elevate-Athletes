@@ -5,7 +5,12 @@ import {
   developerConnectionString,
 } from "@/app/utils/constant";
 import { useDispatch } from "react-redux";
-import { updatePopupVisibility } from "@/app/utils/reduxSlices/popupSlice";
+import {
+  updateIconColor,
+  updatePopupVisibility,
+  updateText,
+  updateWarningSign,
+} from "@/app/utils/reduxSlices/popupSlice";
 
 const DeveloperRoute = (ProtectedRoutes) => {
   return (props) => {
@@ -24,7 +29,7 @@ const DeveloperRoute = (ProtectedRoutes) => {
             }
           );
           if (authResponse.ok) {
-            console.log("test is done");
+            // console.log("test is done");
             const data = await authResponse.json();
             console.log(data);
             // need to set the email inside the global function so

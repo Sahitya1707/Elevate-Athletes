@@ -83,6 +83,27 @@ const Page = () => {
       console.log("fetch Completed");
     }
   };
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const authResponse = await fetch(
+          `
+    ${backendConnection}${developerConnectionString}verify
+    `,
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        );
+        if (authResponse.ok) {
+          router.push("/developer/api/dashboard");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    checkAuth();
+  }, []);
 
   return (
     <section className="w-[100vw] h-[100vh] flex items-center justify-center bg-primary">

@@ -12,7 +12,7 @@ const DashboardSidebarComponent = ({
   return (
     <div
       className={`flex items-center gap-x-2  my-2 w-[90%] mx-auto rounded-md px-2 py-1 
-        ${activeItem === index ? "bg-secondary" : "hover:bg-secondary/80"}
+        ${activeItem === index ? "bg-secondary" : "hover:bg-secondary/90"}
    
         cursor-pointer tracking-wide`}
       onClick={handleDashboardItem}
