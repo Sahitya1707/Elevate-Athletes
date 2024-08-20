@@ -8,11 +8,9 @@ export const NavList = ({ text, handleNavList, index }) => {
   return (
     <Link href={"/"}>
       <li
-        className={`cursor-pointer relative 
-        ${navState === index ? " before:bg-textColor " : ""}
-          ${navState === index ? " before:w-[100%] " : "before:w-[0%]"}  
-           ${navState === index ? "  " : "hover:before:w-[100%]"}  
-        before:content-[' '] before:absolute before:h-[2px] before:w-[100%] before:bottom-0 hover:before:bg-textColor hover:before:duration-200 hover:before:ease-in `}
+        className={`after:bg-textColor after:content-[' '] after:h-[1px]  ${
+          navState === index ? "after:w-[100%]" : "after:w-[0%]"
+        } relative after:absolute after:left-0 after:bottom-0 hover:after:w-[100%] hover:after:duration-200 hover:after:ease-in-out`}
         onClick={handleNavList}
         key={index}
       >
@@ -21,3 +19,9 @@ export const NavList = ({ text, handleNavList, index }) => {
     </Link>
   );
 };
+
+// cursor-pointer relative
+//         ${navState === index ? " before:bg-textColor " : ""}
+//           ${navState === index ? " before:w-[100%] " : ""}
+//            ${navState === index ? "  " : ""}  before:w-[1%]hover:before:w-[100%]
+//         before:content-[' '] before:absolute before:h-[2px] before:w-[100%] before:bottom-0 hover:before:bg-textColor hover:before:duration-200 hover:before:ease-in
