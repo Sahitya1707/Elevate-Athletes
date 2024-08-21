@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { colorMapping } from "@/app/assets/colorMapping";
+import { NavButton } from "../navbar/NavButton";
+import Button from "./Button";
 
 const Container = () => {
   return (
@@ -16,16 +18,30 @@ const Container = () => {
           objectFit: "cover",
         }}
       />
-      <span className="absolute w-[100%] h-[100%] top-0 right-0 bg-heroImageOverlay/30"></span>
+      <span className="absolute w-[100%] h-[100%] top-0 right-0 bg-heroImageOverlay/10"></span>
       <div className="absolute top-[40%] left-[10%] w-[60%] h-10">
         <p
-          className="uppercase text-[3.5rem] text-revTextColor tracking-wider w-[70%]"
+          className="uppercase text-[3.5rem] text-revTextColor tracking-wider w-[70%] leading-snug"
           style={{
             textShadow: `rgb(${colorMapping["heroTextShadow"]}) -4px 5px 3px`,
           }}
         >
           Empowering underrated talents
         </p>
+        <div className="flex gap-x-4 items-center">
+          <Button
+            text={"join now"}
+            link={"/"}
+            color={"revTextColor"}
+            bgColor={"primary"}
+          />
+          <Button
+            text={"Discover Athletes"}
+            link={"/"}
+            color={"primary"}
+            bgColor={"revTextColor"}
+          />
+        </div>
       </div>
     </div>
   );
