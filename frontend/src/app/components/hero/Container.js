@@ -18,10 +18,10 @@ const Container = () => {
           objectFit: "cover",
         }}
       />
-      <span className="absolute w-[100%] h-[100%] top-0 right-0 bg-heroImageOverlay/10"></span>
-      <div className="absolute top-[40%] left-[10%] w-[60%] h-10">
+      <span className="absolute w-[100%] h-[100%] top-0 right-0 bg-heroImageOverlay/10 z-[1990]"></span>
+      <div className="absolute top-[40%] left-[10%] w-[60%] h-10 z-[2000]">
         <p
-          className="uppercase text-[3.5rem] text-revTextColor tracking-wider w-[70%] leading-snug"
+          className="uppercase text-[3.5rem] text-revTextColor tracking-wider w-[70%] leading-[3rem] hover:bg-black"
           style={{
             textShadow: `rgb(${colorMapping["heroTextShadow"]}) -4px 5px 3px`,
           }}
