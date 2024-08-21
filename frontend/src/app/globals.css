@@ -8,9 +8,9 @@
     --color-secondary: 225 224 7;
     --color-secondaryTest: 225 224 7;
     --hero-image-overlay: 255 255 255;
-    --hero-image-text-shadow: 8 8;
+    --hero-image-text-shadow: 8 8 8;
 
-    --color-tertiary: 0 255 1;
+    --color-tertiary: 70 202 70;
     --text-color: 0 0 0;
     --rev-text-color: 255 255 255;
 

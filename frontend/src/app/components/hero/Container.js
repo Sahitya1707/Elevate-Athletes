@@ -28,7 +28,7 @@ const Container = () => {
         >
           Empowering underrated talents
         </p>
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-4 items-center mt-4">
           <Button
             text={"join now"}
             link={"/"}
@@ -38,8 +38,8 @@ const Container = () => {
           <Button
             text={"Discover Athletes"}
             link={"/"}
-            color={"primary"}
-            bgColor={"revTextColor"}
+            color={"revTextColor"}
+            bgColor={"tertiary"}
           />
         </div>
       </div>

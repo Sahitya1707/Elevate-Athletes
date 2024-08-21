@@ -1,14 +1,13 @@
 "use client";
 
 import Container from "./components/hero/Container";
+import Introduction from "./components/introduction/Introduction";
 
 export default function Home() {
   return (
     <main className="">
       <Container />
-      <span className=" text-[black] bg-[red] hover:bg-[black] hover:text-[pink]">
-        Sahityas
-      </span>
+      <Introduction />
     </main>
   );
 }
