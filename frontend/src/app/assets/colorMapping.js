@@ -6,4 +6,6 @@ export const colorMapping = {
   tertiary: "var(--color-tertiary)",
   textColor: "var(--text-color)",
   revTextColor: "var(--rev-text-color)",
+  heroImageOverlay: "var(--hero-image-overlay)",
+  heroTextShadow: "var(--hero-image-text-shadow)",
 };

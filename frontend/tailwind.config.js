@@ -17,6 +17,7 @@ module.exports = {
       tertiary: "rgb(var(--color-tertiary)/<alpha-value> )",
       revTextColor: "rgb(var(--rev-text-color)/<alpha-value> )",
       heroImageOverlay: "rgb(var(--hero-image-overlay)/<alpha-value> )",
+      heroTextShadow: "rgb(var(--hero-image-text-shadow)/<alpha-value> )",
     },
   },
   plugins: [],

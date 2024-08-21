@@ -8,6 +8,7 @@
     --color-secondary: 225 224 7;
     --color-secondaryTest: 225 224 7;
     --hero-image-overlay: 0 0 0;
+    --hero-image-text-shadow: 8 8;
 
     --color-tertiary: 0 255 1;
     --text-color: 0 0 0;
@@ -27,5 +28,5 @@
 
 /* text shadow */
 .text-shadow {
-  text-shadow: #fc0 1px 0 10px;
+  /* text-shadow: rgb(22, 22, 22) 1px 0 10px; */
 }
