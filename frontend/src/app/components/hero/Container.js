@@ -7,17 +7,13 @@ import Button from "./Button";
 
 const Container = () => {
   return (
-    <div id="hero" className="relative h-[90vh] overflow-hidden ">
-      <Image
-        alt="./hero.png"
-        src={"/hero.png"}
-        quality={100}
-        fill
-        sizes="100vw"
-        style={{
-          objectFit: "cover",
-        }}
-      />
+    <div
+      id="hero"
+      className="relative h-[90vh] overflow-hidden bg-fixed bg-no-repeat"
+      style={{
+        backgroundImage: `url("./hero.png")`,
+      }}
+    >
       <span className="absolute w-[100%] h-[100%] top-0 right-0 bg-heroImageOverlay/10 z-[1990]"></span>
       <div className="absolute top-[40%] left-[10%] w-[60%] h-10 z-[2000]">
         <p
