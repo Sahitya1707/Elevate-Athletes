@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const ImageSection = () => {
   return (
-    <div className=" w-[30%] h-[100%] relative flex justify-center gap-x-10">
+    <div className=" w-[30%] h-[80%] relative flex justify-center gap-x-10">
       <div className=" justify-center  gap-y-4 flex flex-col  relative">
         <Image
           src="/images/joystick.png"

@@ -22,7 +22,7 @@ const Button = ({ link, bgColor, text, color }) => {
   return (
     <Link href={link}>
       <button
-        className={`py-2 px-4 rounded-lg uppercase text-lg border-[1px] cursor-pointer hover:ease-out `}
+        className={`py-2 px-4 rounded-lg uppercase text-lg border-[1px] cursor-pointer hover:ease-in `}
         style={buttonStyle}
         onMouseEnter={(e) => {
           setButtonStyle(buttonHoverStyle);
