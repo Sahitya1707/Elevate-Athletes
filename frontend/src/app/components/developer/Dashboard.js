@@ -8,11 +8,13 @@ import { IoAnalyticsSharp } from "react-icons/io5";
 import { CiSettings } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { HiOutlineUser } from "react-icons/hi2";
+import { MdOutlineManageAccounts } from "react-icons/md";
 
 const Dashboard = () => {
   const [activeItem, setActiveItem] = useState(0);
   const dashboardComponentIcon = [
     <MdDashboard />,
+    <MdOutlineManageAccounts />,
     <HiOutlineUser />,
     <IoAnalyticsSharp />,
     <CiSettings />,
@@ -20,6 +22,7 @@ const Dashboard = () => {
   ];
   const dashboardComponent = [
     "Dashboard",
+    "CMS",
     "Users",
     "Analytics",
     "Settings",
