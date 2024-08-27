@@ -13,16 +13,16 @@ const DashboardSubItem = ({ text }) => {
 };
 
 const DashboardSidebarComponent = ({
-  icon,
   item,
   activeItem,
   index,
   handleDashboardItem,
   activeSubItem,
+  data,
 }) => {
-  console.log(activeSubItem);
-
-  console.log(index);
+  console.log(data);
+  const { subItem, icon, componentName } = data;
+  console.log(subItem);
   return (
     <>
       <div
@@ -34,16 +34,18 @@ const DashboardSidebarComponent = ({
       >
         <div className="flex gap-x-2 items-center">
           <span className="text-2xl">{icon}</span>
-          <span>{item}</span>
+          <span>{componentName}</span>
         </div>
 
-        <span>
-          {activeItem === index && activeSubItem === true ? (
-            <MdOutlineKeyboardArrowUp />
-          ) : (
-            <MdOutlineKeyboardArrowDown />
-          )}
-        </span>
+        {subItem.length === 0 ? null : (
+          <span>
+            {activeItem === index && activeSubItem === true ? (
+              <MdOutlineKeyboardArrowUp />
+            ) : (
+              <MdOutlineKeyboardArrowDown />
+            )}
+          </span>
+        )}
       </div>
       <div
         className={`ml-[3rem] w-[80%]  overflow-hidden ${
@@ -52,8 +54,11 @@ const DashboardSidebarComponent = ({
             : "h-0 duration-100 ease-in"
         } `}
       >
-        <DashboardSubItem text={"Left"} />
-        <DashboardSubItem text={"Left"} />
+        {subItem.length === 0
+          ? null
+          : subItem.map((e) => {
+              return <DashboardSubItem text={e} />;
+            })}
       </div>
     </>
   );

@@ -13,21 +13,37 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 const Dashboard = () => {
   const [activeItem, setActiveItem] = useState(0);
   const [activeSubItem, setActiveSubItem] = useState(false);
-  const dashboardComponentIcon = [
-    <MdDashboard />,
-    <MdOutlineManageAccounts />,
-    <HiOutlineUser />,
-    <IoAnalyticsSharp />,
-    <CiSettings />,
-    <IoIosLogOut />,
-  ];
-  const dashboardComponent = [
-    "Dashboard",
-    "CMS",
-    "Users",
-    "Analytics",
-    "Settings",
-    "Logout",
+  const dashboardData = [
+    {
+      icon: <MdDashboard />,
+      componentName: "Dashboard",
+      subItem: ["Item 1", "Item 2"],
+    },
+    {
+      icon: <MdOutlineManageAccounts />,
+      componentName: "CMS",
+      subItem: ["Item 1", "Item 2"],
+    },
+    {
+      icon: <HiOutlineUser />,
+      componentName: "Users",
+      subItem: [],
+    },
+    {
+      icon: <IoAnalyticsSharp />,
+      componentName: "Analytics",
+      subItem: [],
+    },
+    {
+      icon: <CiSettings />,
+      componentName: "Settings",
+      subItem: ["Setting 1", "Setting 2"],
+    },
+    {
+      icon: <IoIosLogOut />,
+      componentName: "Logout",
+      subItem: [],
+    },
   ];
 
   return (
@@ -39,12 +55,13 @@ const Dashboard = () => {
     >
       <DashboardLogoIcon logo="/logo.png" text={"Elevate Athletes"} />
       <div className="mx-auto my-4">
-        {dashboardComponent.map((e, i) => {
+        {dashboardData.map((e, i) => {
           return (
             <DashboardSidebarComponent
-              item={e}
-              icon={dashboardComponentIcon[i]}
+              // item={e}
+              // icon={dashboardComponentIcon[i]}
               key={i}
+              data={e}
               activeItem={activeItem}
               index={i}
               activeSubItem={activeSubItem}
