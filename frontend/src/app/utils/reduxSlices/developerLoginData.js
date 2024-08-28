@@ -4,7 +4,7 @@ export const developerLoginDataSlice = createSlice({
   name: "developerLoginData",
   initialState: {
     email: "",
-    closePopup: "",
+    closePopup: true,
   },
   reducers: {
     updateEmail: (state, action) => {
@@ -16,6 +16,7 @@ export const developerLoginDataSlice = createSlice({
   },
 });
 
-export const { updateEmail } = developerLoginDataSlice.actions;
+export const { updateEmail, updateClosePopup } =
+  developerLoginDataSlice.actions;
 
 export default developerLoginDataSlice.reducer;

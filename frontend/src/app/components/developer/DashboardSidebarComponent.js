@@ -35,16 +35,6 @@ const DashboardSidebarComponent = ({
   setActiveSubItem,
 }) => {
   const { subItem, icon, componentName } = data;
-  // const [activeSubItem, setActiveSubItem] = useState(0);
-
-  const handleActiveSubItem = () => {
-    console.log("Sub Item has been handles");
-  };
-
-  // console.log('Active Item');
-  // console.log(activeItem);
-  // console.log("INdex");
-  // console.log(index);
 
   return (
     <>
