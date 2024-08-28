@@ -11,6 +11,7 @@ import {
   updateText,
   updateWarningSign,
 } from "@/app/utils/reduxSlices/popupSlice";
+import { updateEmail } from "@/app/utils/reduxSlices/developerLoginData";
 
 const DeveloperRoute = (ProtectedRoutes) => {
   return (props) => {
@@ -31,6 +32,7 @@ const DeveloperRoute = (ProtectedRoutes) => {
             // console.log("test is done");
             const data = await authResponse.json();
             console.log(data);
+            dispatch(updateEmail(data.email));
 
             // need to set the email inside the global function so
             setIsAuthenticated(true);
