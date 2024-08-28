@@ -38,11 +38,9 @@ const Page = () => {
   const dispatch = useDispatch();
 
   const handleMail = (e) => {
-    console.log(e.target.value);
     dispatch(updateEmail(e.target.value));
   };
   const handlePassword = (e) => {
-    console.log(e.target.value);
     dispatch(updatePassword(e.target.value));
   };
 

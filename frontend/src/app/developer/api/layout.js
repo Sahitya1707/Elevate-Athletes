@@ -10,7 +10,7 @@ const DeveloperPanelLayout = ({ children }) => {
       ) : (
         <main className="flex ">
           <Dashboard />
-          <section className="p-3">{children}</section>
+          <section className="p-3 pr-8 pl-8">{children}</section>
           <> </>
         </main>
       )}

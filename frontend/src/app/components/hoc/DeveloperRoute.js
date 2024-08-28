@@ -30,6 +30,7 @@ const DeveloperRoute = (ProtectedRoutes) => {
           if (authResponse.ok) {
             // console.log("test is done");
             const data = await authResponse.json();
+            console.log(data);
 
             // need to set the email inside the global function so
             setIsAuthenticated(true);
