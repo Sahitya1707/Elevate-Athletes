@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
-const DashboardSubItem = ({ text }) => {
+const DashboardSubItem = ({
+  text,
+  handleActiveSubItem,
+  index,
+  activeSubItem,
+}) => {
+  // console.log("Below is index for subitem");
+  // console.log(index);
+  // console.log(activeSubItem);
   return (
-    <p className="border-b-[0.1px]  border-solid border-textColor w-[100%]  py-1 cursor-pointer text-[1.2rem] hover:bg-tertiary/80  px-2">
+    <p
+      className={`border-b-[0.1px]  border-solid border-textColor w-[100%]  py-1 cursor-pointer text-[1.2rem] hover:bg-tertiary/80  px-2 ${
+        activeSubItem === index ? "bg-tertiary" : null
+      }`}
+      onClick={handleActiveSubItem}
+    >
       {text}
     </p>
   );
@@ -16,10 +29,17 @@ const DashboardSidebarComponent = ({
   activeItem,
   index,
   handleDashboardItem,
-  activeSubItem,
+  showSubItem,
   data,
+  activeSubItem,
+  setActiveSubItem,
 }) => {
   const { subItem, icon, componentName } = data;
+  // const [activeSubItem, setActiveSubItem] = useState(0);
+
+  const handleActiveSubItem = () => {
+    console.log("Sub Item has been handles");
+  };
 
   // console.log('Active Item');
   // console.log(activeItem);
@@ -42,7 +62,7 @@ const DashboardSidebarComponent = ({
 
         {subItem.length === 0 ? null : (
           <span>
-            {activeItem === index && activeSubItem === true ? (
+            {activeItem === index && showSubItem === true ? (
               <MdOutlineKeyboardArrowUp />
             ) : (
               <MdOutlineKeyboardArrowDown />
@@ -52,16 +72,28 @@ const DashboardSidebarComponent = ({
       </div>
       <div
         className={`ml-[3rem] w-[80%]  overflow-hidden ${
-          activeItem === index && activeSubItem === true
+          activeItem === index && showSubItem === true
             ? "h-auto ease-out duration-200 transition-all"
             : "h-0 duration-100 ease-in transition-all"
         } `}
       >
-        {subItem.length === 0
-          ? null
-          : subItem.map((e, i) => {
-              return <DashboardSubItem text={e} key={i} />;
-            })}
+        {subItem.length === 0 ? (
+          <></>
+        ) : (
+          subItem.map((e, i) => {
+            return (
+              <DashboardSubItem
+                text={e}
+                key={i}
+                index={i}
+                activeSubItem={activeSubItem}
+                handleActiveSubItem={() => {
+                  setActiveSubItem(i);
+                }}
+              />
+            );
+          })
+        )}
       </div>
     </>
   );

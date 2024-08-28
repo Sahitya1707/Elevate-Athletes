@@ -18,7 +18,6 @@ const DeveloperRoute = (ProtectedRoutes) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
-      console.log("useEffect has been called");
       const checkDeveloperAuth = async () => {
         try {
           const authResponse = await fetch(
@@ -31,7 +30,7 @@ const DeveloperRoute = (ProtectedRoutes) => {
           if (authResponse.ok) {
             // console.log("test is done");
             const data = await authResponse.json();
-            console.log(data);
+
             // need to set the email inside the global function so
             setIsAuthenticated(true);
           } else {

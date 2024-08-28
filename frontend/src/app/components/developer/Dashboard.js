@@ -12,7 +12,9 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 
 const Dashboard = () => {
   const [activeItem, setActiveItem] = useState(0);
-  const [activeSubItem, setActiveSubItem] = useState(false);
+  const [showSubItem, setShowSubItem] = useState(false);
+  const [activeSubItem, setActiveSubItem] = useState(0);
+
   const dashboardData = [
     {
       icon: <MdDashboard />,
@@ -64,19 +66,23 @@ const Dashboard = () => {
               data={e}
               activeItem={activeItem}
               index={i}
+              showSubItem={showSubItem}
               activeSubItem={activeSubItem}
+              setActiveSubItem={setActiveSubItem}
               handleDashboardItem={() => {
+                setActiveSubItem(null);
                 setActiveItem(i);
                 if (
                   dashboardData[i].subItem.length > 0 &&
-                  activeSubItem === true &&
+                  showSubItem === true &&
                   activeItem === i
                 ) {
-                  setActiveSubItem(false);
+                  setShowSubItem(false);
+                  return;
                 } else if (dashboardData[i].subItem.length > 0) {
-                  setActiveSubItem(true);
+                  setShowSubItem(true);
                 } else {
-                  setActiveSubItem(!activeSubItem);
+                  setShowSubItem(!showSubItem);
                 }
               }}
             />
