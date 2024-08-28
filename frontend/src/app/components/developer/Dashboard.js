@@ -67,7 +67,17 @@ const Dashboard = () => {
               activeSubItem={activeSubItem}
               handleDashboardItem={() => {
                 setActiveItem(i);
-                setActiveSubItem(!activeSubItem);
+                if (
+                  dashboardData[i].subItem.length > 0 &&
+                  activeSubItem === true &&
+                  activeItem === i
+                ) {
+                  setActiveSubItem(false);
+                } else if (dashboardData[i].subItem.length > 0) {
+                  setActiveSubItem(true);
+                } else {
+                  setActiveSubItem(!activeSubItem);
+                }
               }}
             />
           );

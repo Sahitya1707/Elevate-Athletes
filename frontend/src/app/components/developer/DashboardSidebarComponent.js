@@ -6,30 +6,33 @@ import {
 import { IoIosArrowUp } from "react-icons/io";
 const DashboardSubItem = ({ text }) => {
   return (
-    <p className="border-b-[0.1px]  border-solid border-textColor w-[100%]  py-1 cursor-pointer text-[1.2rem]">
+    <p className="border-b-[0.1px]  border-solid border-textColor w-[100%]  py-1 cursor-pointer text-[1.2rem] hover:bg-tertiary/80  px-2">
       {text}
     </p>
   );
 };
 
 const DashboardSidebarComponent = ({
-  item,
   activeItem,
   index,
   handleDashboardItem,
   activeSubItem,
   data,
 }) => {
-  console.log(data);
   const { subItem, icon, componentName } = data;
-  console.log(subItem);
+
+  // console.log('Active Item');
+  // console.log(activeItem);
+  // console.log("INdex");
+  // console.log(index);
+
   return (
     <>
       <div
         className={`flex items-center gap-x-2  my-2 w-[90%] mx-auto rounded-md px-2 py-1 justify-between
-        ${activeItem === index ? "bg-secondary" : "hover:bg-secondary/90"}
-
-        cursor-pointer tracking-wide `}
+        ${
+          activeItem === index ? "bg-secondary" : "hover:bg-secondary/90"
+        } cursor-pointer tracking-wide `}
         onClick={handleDashboardItem}
       >
         <div className="flex gap-x-2 items-center">
@@ -50,14 +53,14 @@ const DashboardSidebarComponent = ({
       <div
         className={`ml-[3rem] w-[80%]  overflow-hidden ${
           activeItem === index && activeSubItem === true
-            ? "h-auto ease-out duration-200"
-            : "h-0 duration-100 ease-in"
+            ? "h-auto ease-out duration-200 transition-all"
+            : "h-0 duration-100 ease-in transition-all"
         } `}
       >
         {subItem.length === 0
           ? null
-          : subItem.map((e) => {
-              return <DashboardSubItem text={e} />;
+          : subItem.map((e, i) => {
+              return <DashboardSubItem text={e} key={i} />;
             })}
       </div>
     </>
