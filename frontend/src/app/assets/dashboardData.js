@@ -9,31 +9,36 @@ export const dashboardData = [
   {
     icon: <MdDashboard />,
     componentName: "Dashboard",
+    link: "/dashboard",
     subItem: [],
   },
   {
     icon: <MdOutlineManageAccounts />,
     componentName: "CMS",
+    link: "/cms",
     subItem: ["Item 1", "Item 2"],
   },
   {
     icon: <HiOutlineUser />,
     componentName: "Users",
+    link: "/users",
     subItem: [],
   },
   {
     icon: <IoAnalyticsSharp />,
     componentName: "Analytics",
+    link: "/analytics",
     subItem: [],
   },
   {
     icon: <CiSettings />,
     componentName: "Settings",
+    link: "/settings",
     subItem: ["Setting 1", "Setting 2"],
   },
-  {
-    icon: <IoIosLogOut />,
-    componentName: "Logout",
-    subItem: [],
-  },
+  // {
+  //   icon: <IoIosLogOut />,
+  //   componentName: "Logout",
+  //   subItem: [],
+  // },
 ];

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
@@ -34,10 +35,11 @@ const DashboardSidebarComponent = ({
   activeSubItem,
   setActiveSubItem,
 }) => {
-  const { subItem, icon, componentName } = data;
+  console.log(data);
+  const { subItem, icon, componentName, link } = data;
 
   return (
-    <>
+    <Link href={`${link ? `/developer/api${link}` : ""}`} value="sahity">
       <div
         className={`flex items-center gap-x-2  my-2 w-[90%] mx-auto rounded-md px-2 py-1 justify-between
         ${
@@ -85,7 +87,7 @@ const DashboardSidebarComponent = ({
           })
         )}
       </div>
-    </>
+    </Link>
   );
 };
 
