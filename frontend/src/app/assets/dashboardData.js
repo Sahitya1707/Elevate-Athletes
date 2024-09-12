@@ -36,9 +36,10 @@ export const dashboardData = [
     link: "/settings",
     subItem: ["Setting 1", "Setting 2"],
   },
-  // {
-  //   icon: <IoIosLogOut />,
-  //   componentName: "Logout",
-  //   subItem: [],
-  // },
+  {
+    icon: <IoIosLogOut />,
+    componentName: "Logout",
+    link: "/logout",
+    subItem: [],
+  },
 ];

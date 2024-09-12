@@ -1,10 +1,11 @@
 "use client";
-import DeveloperRoute from "@/app/components/hoc/DeveloperRoute";
 
-import React from "react";
+// import React from "react";
+import developerRoute from "@/app/components/hoc/developerRoute";
+import { FaUserAlt } from "react-icons/fa";
 
-const page = () => {
-  return <div>dasboard</div>;
+const Page = () => {
+  return <div>sahitya</div>;
 };
 
-export default DeveloperRoute(page);
+export default developerRoute(Page);

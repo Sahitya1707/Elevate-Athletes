@@ -35,7 +35,6 @@ const DashboardSidebarComponent = ({
   activeSubItem,
   setActiveSubItem,
 }) => {
-  console.log(data);
   const { subItem, icon, componentName, link } = data;
 
   return (

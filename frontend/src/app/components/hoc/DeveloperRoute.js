@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -13,8 +15,8 @@ import {
 } from "@/app/utils/reduxSlices/popupSlice";
 import { updateEmail } from "@/app/utils/reduxSlices/developerLoginData";
 
-const DeveloperRoute = (ProtectedRoutes) => {
-  return (props) => {
+const developerRoute = (ProtectedRoutes) => {
+  const AuthenticatedRoute = (props) => {
     const router = useRouter();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const dispatch = useDispatch();
@@ -31,7 +33,7 @@ const DeveloperRoute = (ProtectedRoutes) => {
           if (authResponse.ok) {
             // console.log("test is done");
             const data = await authResponse.json();
-            console.log(data);
+
             dispatch(updateEmail(data.email));
 
             // need to set the email inside the global function so
@@ -49,13 +51,10 @@ const DeveloperRoute = (ProtectedRoutes) => {
         }
       };
       checkDeveloperAuth();
-    }, [router]);
-    return (
-      <>
-        <ProtectedRoutes {...props} />
-      </>
-    );
+    }, [router, dispatch]);
+    return <ProtectedRoutes {...props} />;
   };
+  return AuthenticatedRoute;
 };
 
-export default DeveloperRoute;
+export default developerRoute;
