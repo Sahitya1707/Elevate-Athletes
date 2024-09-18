@@ -15,7 +15,7 @@ const DeveloperPanelLayout = ({ children }) => {
         <main className="flex ">
           <Dashboard />
 
-          <section className="p-3 pr-8 pl-8 mt-4">
+          <section className="p-3 w-[80vw] pr-8 pl-8 mt-4">
             <div className="mt-2  underline text-xl ">{dashboardLocation}</div>
             <div className="mt-4">{children}</div>
           </section>

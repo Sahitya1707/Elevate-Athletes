@@ -3,14 +3,15 @@
 import Dashboard from "@/app/components/developer/Dashboard";
 import DashboardItemComponent from "@/app/components/developer/DashboardItemComponent";
 // import React from "react";
-import developerRoute from "@/app/components/hoc/developerRoute";
+import developerRoute from "@/app/components/hoc/DeveloperRoute";
 import { FaUserAlt } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa6";
+import { MdArticle, MdOutlinePostAdd } from "react-icons/md";
 
 const Page = () => {
   return (
     <>
-      <div className="flex gap-x-4">
+      <div className="flex justify-evenly w-full">
         <DashboardItemComponent
           icon={<FaUserAlt />}
           number={24}
@@ -20,6 +21,13 @@ const Page = () => {
           icon={<FaUserPlus />}
           number={24}
           text={"New Users"}
+        />
+        <DashboardItemComponent icon={<MdArticle />} number={3} text={"Post"} />
+        <DashboardItemComponent
+          icon={<MdArticle />}
+          number={0}
+          text={"Add New Post"}
+          link="/"
         />
       </div>
     </>

@@ -15,6 +15,7 @@ module.exports = {
       secondary: "rgb(var(--color-secondary) / <alpha-value> )",
       textColor: "rgb(var(--text-color) / <alpha-value> )",
       tertiary: "rgb(var(--color-tertiary)/<alpha-value> )",
+      colorFour: "rgb(var(--color-four)/<alpha-value>)",
       revTextColor: "rgb(var(--rev-text-color)/<alpha-value> )",
       heroImageOverlay: "rgb(var(--hero-image-overlay)/<alpha-value> )",
       heroTextShadow: "rgb(var(--hero-image-text-shadow)/<alpha-value> )",

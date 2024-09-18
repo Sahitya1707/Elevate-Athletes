@@ -4,6 +4,7 @@ import { CiSettings } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { HiOutlineUser } from "react-icons/hi2";
 import { MdOutlineManageAccounts } from "react-icons/md";
+import { MdOutlineDesktopWindows } from "react-icons/md";
 
 export const dashboardData = [
   {
@@ -13,7 +14,7 @@ export const dashboardData = [
     subItem: [],
   },
   {
-    icon: <MdOutlineManageAccounts />,
+    icon: <MdOutlineDesktopWindows />,
     componentName: "CMS",
     link: "/cms",
     subItem: ["Item 1", "Item 2"],
