@@ -5,6 +5,7 @@ export const developerLoginDataSlice = createSlice({
   initialState: {
     email: "",
     closePopup: true,
+    dashboardHeading: "Dashboard",
   },
   reducers: {
     updateEmail: (state, action) => {
@@ -13,10 +14,13 @@ export const developerLoginDataSlice = createSlice({
     updateClosePopup: (state, action) => {
       state.closePopup = action.payload;
     },
+    updateDashboardHeading: (state, action) => {
+      state.dashboardHeading = action.payload;
+    },
   },
 });
 
-export const { updateEmail, updateClosePopup } =
+export const { updateEmail, updateClosePopup, updateDashboardHeading } =
   developerLoginDataSlice.actions;
 
 export default developerLoginDataSlice.reducer;
