@@ -17,7 +17,20 @@ export const dashboardData = [
     icon: <MdOutlineDesktopWindows />,
     componentName: "CMS",
     link: "/cms",
-    subItem: ["Item 1", "Item 2"],
+    subItem: [
+      {
+        link: "/pages",
+        subItemName: "Pages",
+      },
+      {
+        link: "/posts",
+        subItemName: "Posts",
+      },
+      {
+        link: "/menus",
+        subItemName: "menus",
+      },
+    ],
   },
   {
     icon: <HiOutlineUser />,

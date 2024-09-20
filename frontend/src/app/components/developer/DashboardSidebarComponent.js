@@ -7,6 +7,7 @@ import {
 import { IoIosArrowUp } from "react-icons/io";
 const DashboardSubItem = ({
   text,
+  link,
   handleActiveSubItem,
   index,
   activeSubItem,
@@ -18,7 +19,7 @@ const DashboardSubItem = ({
     <p
       className={`border-b-[0.1px]  border-solid border-textColor w-[100%]  py-1 cursor-pointer text-[1.2rem] hover:bg-tertiary/80  px-2 ${
         activeSubItem === index ? "bg-tertiary" : null
-      }`}
+      } capitalize`}
       onClick={handleActiveSubItem}
     >
       {text}
@@ -72,10 +73,12 @@ const DashboardSidebarComponent = ({
           <></>
         ) : (
           subItem.map((e, i) => {
+            console.log(e);
             return (
               <DashboardSubItem
-                text={e}
+                text={e.subItemName}
                 key={i}
+                link={e.link}
                 index={i}
                 activeSubItem={activeSubItem}
                 handleActiveSubItem={() => {
