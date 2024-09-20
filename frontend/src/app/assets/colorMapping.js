@@ -8,4 +8,5 @@ export const colorMapping = {
   revTextColor: "var(--rev-text-color)",
   heroImageOverlay: "var(--hero-image-overlay)",
   heroTextShadow: "var(--hero-image-text-shadow)",
+  colorFour: "var(--color-four)",
 };

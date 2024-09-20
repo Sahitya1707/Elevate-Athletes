@@ -6,7 +6,7 @@ const DeveloperPanelLayout = ({ children }) => {
   const router = usePathname();
   console.log(router);
   const dashboardLocation = router.slice(10);
-  console.log(dashboardLocation);
+
   return (
     <>
       {router && router.includes("/developer/api/login") ? (
