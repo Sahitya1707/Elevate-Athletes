@@ -6,14 +6,7 @@ import { BsSignpost2Fill } from "react-icons/bs";
 import CMSComponent from "@/app/components/developer/CMSComponent";
 import { BsMenuButtonWideFill } from "react-icons/bs";
 
-import { useDispatch } from "react-redux";
-import { updateDashboardHeading } from "@/app/utils/reduxSlices/developerLoginData";
-
 const Page = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(updateDashboardHeading("CMS"));
-  }, []);
   return (
     <div className="flex flex-col gap-y-4">
       <CMSComponent

@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 const DeveloperPanelLayout = ({ children }) => {
   const router = usePathname();
-  const heading = useSelector((store) => {
-    return store.developerLoginData.dashboardHeading;
-  });
-
-  console.log(router);
+  // const heading = useSelector((store) => {
+  //   return store.developerLoginData.dashboardHeading;
+  // });
+  const headingArr = router.split("/");
+  const heading = headingArr[headingArr.length - 1];
 
   const dashboardLocation = router.slice(10);
 
