@@ -16,6 +16,8 @@ const inter = Inter({ subsets: ["latin"] });
 const iceland = Iceland({
   weight: "400",
   subsets: ["latin"],
+  // By providing a value of swap , we tell the browser to render the page right away with fallback fonts, and then redraw the page once the fonts have loaded
+  display: "swap",
 });
 
 export const metadata = {
