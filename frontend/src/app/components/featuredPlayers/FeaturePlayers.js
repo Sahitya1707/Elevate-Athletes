@@ -6,7 +6,7 @@ import Button from "../hero/Button";
 const FeaturePlayers = () => {
   return (
     <div
-      className=" mx-auto text-center py-4 bg-fixed bg-primary h-screen"
+      className=" mx-auto text-center py-4 bg-fixed bg-primary min-h-screen"
       style={
         {
           // backgroundImage:
