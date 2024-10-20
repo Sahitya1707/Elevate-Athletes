@@ -9,4 +9,6 @@ export const colorMapping = {
   heroImageOverlay: "var(--hero-image-overlay)",
   heroTextShadow: "var(--hero-image-text-shadow)",
   colorFour: "var(--color-four)",
+  colorFive: "var(--color-five)",
+  colorSix: "var(--color-six)",
 };

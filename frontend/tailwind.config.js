@@ -19,6 +19,8 @@ module.exports = {
       revTextColor: "rgb(var(--rev-text-color)/<alpha-value> )",
       heroImageOverlay: "rgb(var(--hero-image-overlay)/<alpha-value> )",
       heroTextShadow: "rgb(var(--hero-image-text-shadow)/<alpha-value> )",
+      colorFive: "rgb(var(--color-five)/<alpha-value> )",
+      colorSix: "rgb(var(--color-six)/<alpha-value> )",
     },
   },
   plugins: [],
