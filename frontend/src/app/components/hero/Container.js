@@ -9,7 +9,7 @@ const Container = () => {
   return (
     <div
       id="hero"
-      className="relative h-[90vh] overflow-hidden bg-fixed bg-no-repeat bg-cover"
+      className="relative h-screen overflow-hidden bg-fixed bg-no-repeat bg-cover"
       style={{
         backgroundImage: `url("./hero.png")`,
       }}
