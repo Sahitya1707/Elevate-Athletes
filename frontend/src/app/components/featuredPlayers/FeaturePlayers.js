@@ -16,7 +16,7 @@ const FeaturePlayers = () => {
     >
       <SectionHeading
         text={"Featured Players"}
-        textColor={"primaryClr"}
+        textColor={"secondary"}
         textShadowColor={"primary"}
       />
       <CardsContainer />

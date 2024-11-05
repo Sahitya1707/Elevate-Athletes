@@ -5,6 +5,7 @@ import Container from "./components/hero/Container";
 import Introduction from "./components/introduction/Introduction";
 import Cta from "./components/cta/Cta";
 import UpcomingEvents from "./components/upcomingEvents/UpcomingEvents";
+import OurPartners from "./components/Partners/OurPartners";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturePlayers />
       {/* <Cta /> */}
       <UpcomingEvents />
+      <OurPartners />
     </main>
   );
 }

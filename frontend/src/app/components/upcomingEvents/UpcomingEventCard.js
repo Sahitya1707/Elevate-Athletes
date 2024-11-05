@@ -10,7 +10,7 @@ const UpcomingEventCard = ({
   virtualLink,
 }) => {
   return (
-    <div className="shadow-md w-[25rem] p-4  text-left border-2 border-solid border-primary">
+    <div className="shadow-lg w-[25rem] p-4  text-left border-2 border-solid border-primary">
       <div className="flex gap-x-4 justify-between">
         <div className="w-[4rem] bg-primary h-[4rem] flex-col justify-center flex   text-revTextColor text-xl items-center shadow-lg uppercase">
           {/* Date will be seperated and use it according as per the need */}
